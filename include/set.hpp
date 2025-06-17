@@ -27,8 +27,8 @@ class Set {
    * não é modificado.
    *
    * @param value O valor a ser inserido.
-   * @return `true` se o elemento foi inserido com sucesso (não existia antes),
-   * `false` se o elemento já existe no conjunto.
+   * @return true se o elemento foi inserido com sucesso (não existia antes),
+   * false se o elemento já existe no conjunto.
    */
   bool insert(const T& value);
 
@@ -39,8 +39,8 @@ class Set {
    * não é modificado.
    *
    * @param value O valor a ser removido.
-   * @return `true` se o elemento foi removido com sucesso,
-   * `false` se o elemento não foi encontrado no conjunto.
+   * @return true se o elemento foi removido com sucesso,
+   * false se o elemento não foi encontrado no conjunto.
    */
   bool remove(const T& value);
 
@@ -48,8 +48,8 @@ class Set {
    * @brief Verifica se um elemento está contido no conjunto.
    *
    * @param value O valor a ser buscado.
-   * @return `true` se o elemento estiver presente no conjunto,
-   * `false` caso contrário.
+   * @return true se o elemento estiver presente no conjunto,
+   * false caso contrário.
    */
   bool search(const T& value) const;
 
@@ -66,10 +66,18 @@ template <class T>
 Set<T>::Set() {}
 
 template <class T>
-bool Set<T>::insert(const T& value) {}
+bool Set<T>::insert(const T& value) {
+  return data.insert(value);
+}
 
 template <class T>
-bool Set<T>::remove(const T& value) {}
+bool Set<T>::remove(const T& value) {
+  return data.remove(value);
+}
 
-template <class T>
-bool Set<T>::search(const T& value) const {}
+template <typename T>
+bool Set<T>::search(const T& value) const {
+    return data.contain(value);
+}
+
+//fazer o commit
